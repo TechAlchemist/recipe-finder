@@ -31,19 +31,40 @@
 </head>
 
 <body>
-  <div class="sidebar">
-    <a  href="index.php">Home</a>
-    <a class="active" href="explore-recipes.php">Explore Recipes</a>
-    <a href="#">About</a>
-  </div>
 
-  <div class="jumbotron" id="header">
-    <h1 id="hero-text">Explore Recipes</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
+  <a class="navbar-brand" href="index.php">Recipe Finder</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Home </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="explore-recipes.php">Explore Recipes <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> - </a>
+      </li>
+    </ul>
+    <ul id="nav-login">
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Login </a>
+      </li>
+    </ul>
+
+    
   </div>
+</nav>
+
+<div class="container">
+
 
   <div class="container" id="main-content">
-    <div class="jumbotron" id="explore-jumbotron">
-      <p>No recipes catch your eye? Generate a new list.</p>
+    <div class="jumbotron" id="#main-content-jumbotron">
+      <p>Explore a collection of awesome new recipes. </p>
       <button type="button" class="btn btn-primary" id="refreshRecipeBtn"> Recipe Me! </button>
     </div>
 
@@ -54,7 +75,7 @@
   </div>
   <br />
 
-
+</div>
 
 
 
