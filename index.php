@@ -34,18 +34,38 @@
 </head>
 
 <body>
-  <div class="sidebar">
-    <a class="active" href="index.php">Home</a>
-    <a href="explore-recipes.php">Explore Recipes</a>
-    <a href="#about">About</a>
-  </div>
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
+  <a class="navbar-brand" href="index.php">Recipe Finder</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="explore-recipes.php">Explore Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> - </a>
+      </li>
+    </ul>
+    <ul id="nav-login">
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Login </a>
+      </li>
+    </ul>
 
-  <div class="jumbotron" id="header">
-    <h1 id="hero-text">Recipe Finder</h1>
+    
   </div>
+</nav>
+<div class="container">
+
 
   <div class="container" id="main-content">
-    <div class="jumbotron">
+    <div class="jumbotron" id="main-content-jumbotron">
       <p>Welcome! Recipe Finder is the quick solution for adventurous chefs to look for and discover new recipes. Search for recipes using keywords and start cooking or save the recipe for later.  </p>
     </div>
     <div class="input-group">
@@ -72,7 +92,7 @@
     <div class="card-deck"></div>
 
   </div>
-  
+</div> 
 
 
 
