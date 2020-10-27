@@ -33,7 +33,6 @@ function getUsers() {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare('SELECT * FROM `users`');
     $stmt->execute();
-  
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $results = $stmt->fetchAll();

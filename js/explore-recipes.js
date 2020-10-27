@@ -1,7 +1,7 @@
 const API_KEY = "a9e9d829481440938e0dd11ad5ac58a0";
 
 // apiRequest();
-$("#explore-jumbotron").on("click", apiRequest);
+$("#refreshRecipeBtn").on("click", apiRequest);
 
 function apiRequest() {
   let url = `https://api.spoonacular.com/recipes/random?number=19&apiKey=${API_KEY}`;

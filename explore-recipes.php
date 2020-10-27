@@ -23,14 +23,14 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./js/explore-recipes.js"></script>
-    <link rel="stylesheet" href="./css/explore-recipes.css" />
+    <script defer src="js/explore-recipes.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
 
   </head>
   <title>rf | Explore</title>
 </head>
 
-<body>
+<body id="explore-body">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
   <a class="navbar-brand" href="index.php">Recipe Finder</a>
@@ -54,31 +54,17 @@
         <a class="nav-link" href="#"> Login </a>
       </li>
     </ul>
-
-    
   </div>
 </nav>
 
-<div class="container">
-
-
-  <div class="container" id="main-content">
-    <div class="jumbotron" id="#main-content-jumbotron">
-      <p>Explore a collection of awesome new recipes. </p>
-      <button type="button" class="btn btn-primary" id="refreshRecipeBtn"> Recipe Me! </button>
+  <div class="container">
+    <div class="jumbotron">
+      <p>Explore a collection of awesome new recipes. <span>  <button type="button" class="btn btn-primary" id="refreshRecipeBtn"> Recipe Me! </button> </span> </p>
     </div>
-
     <div class="container">
-        <div class="card-deck"></div>
-    
-      </div>
+      <div class="card-deck"></div>   
+    </div>
   </div>
-  <br />
-
-</div>
-
-
-
 </body>
 
 </html>

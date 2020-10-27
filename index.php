@@ -27,7 +27,7 @@
       crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./js/search-recipes.js"></script>
-    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
   </head>
   <title>recipe finder</title>
@@ -61,11 +61,11 @@
     
   </div>
 </nav>
-<div class="container">
 
 
-  <div class="container" id="main-content">
-    <div class="jumbotron" id="main-content-jumbotron">
+
+  <div class="container" >
+    <div class="jumbotron">
       <p>Welcome! Recipe Finder is the quick solution for adventurous chefs to look for and discover new recipes. Search for recipes using keywords and start cooking or save the recipe for later.  </p>
     </div>
     <div class="input-group">
@@ -75,25 +75,18 @@
           recipe
         </span>
       </div>
-
-      <input type="text" class="form-control" id="recipe-search-bar" />
+      <input type="text" class="form-control" id="recipe-search-bar"/>
       <div class="input-group-append">
         <button class="btn btn-outline" type="button" id="search-submit">
           Search
         </button>
-      </div>
     </div>
-    <br />
-    <br />
-    <!-- Group Boxes for each recipe -->
   </div>
-  <br />
-  <div class="container" id="recipeGallery">
+  <br>
+  <div class="container">
     <div class="card-deck"></div>
-
-  </div>
-</div> 
-
+  </div> 
+  <br>
 
 
 
