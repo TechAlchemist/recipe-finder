@@ -106,7 +106,6 @@
   </div>
   <br>
   <div class="container">
-  <? echo $_SESSION['username'] ?>
     <div class="card-deck"></div>
   </div> 
   <br>

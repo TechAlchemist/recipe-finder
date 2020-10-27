@@ -3,6 +3,9 @@ const $searchBtn = $('#search-submit');
 const $userInput = $('#recipe-search-bar');
 
 $($searchBtn).on('click', apiRequest);
+$(".fas fa-heart").on('click', function(){
+  console.log(this.id);
+});
 
 function apiRequest() {
   let userInput = $userInput.val();
@@ -55,7 +58,7 @@ function renderSearchResults(resultsArray) {
               
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Favorite</button>
+              <i class="fas fa-heart" id="${element.id}FAV" onclick="favoriteRecipe(${element.id})"></i>
               <button type="button" class="btn btn-primary"><a href="${element.sourceUrl}">Recipe Origin</a></button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
@@ -71,11 +74,30 @@ function renderSearchResults(resultsArray) {
 
 function getRecipeInformation(instructions) {
   let recipeSteps = [];
-  console.log(instructions[0].steps[0].step);
+  // console.log(instructions[0].steps[0].step);
   for (let i = 0; i < instructions[0].steps.length; i++) {
     recipeSteps.push(instructions[0].steps[i].step)
   }
   return recipeSteps.join(' ');
 
 }
-// https://api.spoonacular.com/recipes/1096257/information&apiKey=a9e9d829481440938e0dd11ad5ac58a0
+
+function favoriteRecipe(id) {
+  let data = '';
+  data = id.toString();
+  console.log('recipeId = ', data)
+  console.log('Favoriting recipe. ');
+  $.ajax({  
+    type: 'POST',  
+    url: './php-scripts/insertFavorite.php', 
+    data: {data : data},
+    success: function(response) {
+      console.log(response);
+      // window.location = "./php-scripts/insertFavorite.php";
+    },
+    error: function() {
+      console.log('Error calling php insert favorite script. ');
+    }
+});
+  
+}
