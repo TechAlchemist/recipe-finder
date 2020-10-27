@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="./css/style.css" />
 
   </head>
-  <title>recipe finder</title>
+  <title>recipe finder | my recipes</title>
 </head>
 
 <body>
@@ -45,14 +45,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="explore-recipes.php">Explore Recipes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="my-recipes.php"> My Recipes </a>
+        <a class="nav-link active" href="my-recipes.php"> My Recipes </a>
       </li>
     </ul>
     <ul id="nav-login">
@@ -88,62 +88,11 @@
 
   <div class="container" >
     <div class="jumbotron">
-      <p>Welcome! Recipe Finder is the quick solution for adventurous chefs to look for and discover new recipes. Search for recipes using keywords and start cooking or save the recipe for later.  </p>
-    </div>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span id="search-prompt-on-bar" class="input-group-text"><i class="fas fa-search" style="padding: 6px"></i>
-          Search for a
-          recipe
-        </span>
-      </div>
-      <input type="text" class="form-control" id="recipe-search-bar"/>
-      <div class="input-group-append">
-        <button class="btn btn-outline" type="button" id="search-submit">
-          Search
-        </button>
+      <p> My Recipes </p>
     </div>
   </div>
-  <br>
-  <div class="container">
-  <? echo $_SESSION['username'] ?>
-    <div class="card-deck"></div>
-  </div> 
-  <br>
 
 
 
-</body>
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Recipe Finder Login</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-      <p>This project is for learning purposes! You can sign in with a test account. Username: HeyGoodCookin Password: Cooking</p>
-      <form action="./php-scripts/login.php" method="post">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter Username">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
-        </div>
-        <button type="submit" class="btn btn-primary" id="loginBtn">Submit</button>
-      </form>
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+  </body>
 </html>
