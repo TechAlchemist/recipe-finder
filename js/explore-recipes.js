@@ -1,6 +1,5 @@
 const API_KEY = "a9e9d829481440938e0dd11ad5ac58a0";
 
-// apiRequest();
 $("#refreshRecipeBtn").on("click", apiRequest);
 
 function apiRequest() {
@@ -35,7 +34,6 @@ function renderSearchResults(resultsArray) {
         </div>
       </div>
      </div>
-     
 
      <div class="modal fade" id="${element.id}" tabindex="-1" role="dialog" aria-labelledby="${element.id}title" aria-hidden="true">
      <div class="modal-dialog modal-dialog-centered" role="document">
@@ -58,8 +56,6 @@ function renderSearchResults(resultsArray) {
          </div>
      </div>
      </div>
-
-   
     `);
   });
 }

@@ -37,53 +37,47 @@
 
 <body>
   
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
-  <a class="navbar-brand" href="index.php">Recipe Finder</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="explore-recipes.php">Explore Recipes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="my-recipes.php"> My Recipes </a>
-      </li>
-    </ul>
-    <ul id="nav-login">
-      
-      <?php
-        if (!isset($_SESSION['username'])) {
-          echo ' 
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal"> Login </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> Sign Up? </a>
-          </li>';
-        }
-        else {
-          echo 
-          '<li class="nav-item">  
-            <a class="nav-link" href="my-recipes.php">' . $_SESSION['username'] . '</a>
-          </li>                    
-          <li class="nav-item">
-            <a class="nav-link" href="./php-scripts/logout.php"> Logout </a>
-          </li>'; 
-        }
-      ?>
-       
-    </ul>
-
-    
-  </div>
-</nav>
-
-
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
+    <a class="navbar-brand" href="index.php">Recipe Finder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="explore-recipes.php">Explore Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="my-recipes.php"> My Recipes </a>
+        </li>
+      </ul>
+      <ul id="nav-login">
+        <?php
+          if (!isset($_SESSION['username'])) {
+            echo ' 
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal"> Login </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Sign Up? </a>
+            </li>';
+          }
+          else {
+            echo 
+            '<li class="nav-item">  
+              <a class="nav-link" href="my-recipes.php">' . $_SESSION['username'] . '</a>
+            </li>                    
+            <li class="nav-item">
+              <a class="nav-link" href="./php-scripts/logout.php"> Logout </a>
+            </li>'; 
+          }
+        ?>       
+      </ul>  
+    </div>
+  </nav>
 
   <div class="container" >
     <div class="jumbotron">
@@ -109,39 +103,34 @@
   </div> 
   <br>
 
-
-
 </body>
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Recipe Finder Login</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-      <p>This project is for learning purposes! You can sign in with a test account. Username: HeyGoodCookin Password: Cooking</p>
-      <form action="./php-scripts/login.php" method="post">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter Username">
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Recipe Finder Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+        <div class="modal-body">
+        <p>This project is for learning purposes! You can sign in with a test account. Username: HeyGoodCookin Password: Cooking</p>
+        <form action="./php-scripts/login.php" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+          </div>
+          <button type="submit" class="btn btn-primary" id="loginBtn">Submit</button>
+        </form>
         </div>
-        <button type="submit" class="btn btn-primary" id="loginBtn">Submit</button>
-      </form>
-      </div>
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </html>

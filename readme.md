@@ -5,9 +5,18 @@
 ---
 
 ## Screenshots
-![HomeScreenShot](homepage.png)
-![ExploreRecipeShot](explore-recipes.png)
-![FavoriteRecipesShot](favorite-recipes.png)
+
+![HomeScreenShot](./screenshots/homepage.png)
+
+![ExploreRecipeShot](./screenshots/explore-recipes.png)
+
+![FavoriteRecipesShot](./screenshots/favorite-recipes.png)
+
+### Database Schema
+
+![Database-user-schema](user-schema.png)
+
+![Database-favorite-recipes-schema](./screenshots/favorite-recipes-schema.png)
 
 ---
 
@@ -28,11 +37,16 @@
 ## Getting Started
 The project was developed in XAMPP, the development environment needs PDO module to run the SQL statements. Screenshots of the database schema can be found above to help replicate a local environment.
 
-[Deploy-Project](https://brandons-recipe-finder.herokuapp.com/)  
+[Live Project](https://brandons-recipe-finder.herokuapp.com/)  
 
 ---
 
 ## Future Enhancements
 1. Convert to either PHP framework like Laravel or technology stack like MERN.
-2. Move away from relational database. 
+    - Secure user login and account creation: password salting/hashing and auth tokens. THE WORKS!
+2. Move away from relational database for practice purposes. 
 3. Hide API keys and setup env files. 
+
+## Project Challeneges and Takeaway
+
+The biggest challenge by far was making PHP and JQuery play nicely together. It showed me I do not like PHP that much and that modern frameworks like Node are much more oriented to the task. 

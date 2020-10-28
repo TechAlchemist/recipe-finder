@@ -68,7 +68,6 @@ function renderSearchResults(resultsArray) {
   });
   $userInput.focus();
   $userInput.val('');
-  
 }
 
 function getRecipeInformation(instructions) {
@@ -78,7 +77,6 @@ function getRecipeInformation(instructions) {
     recipeSteps.push(instructions[0].steps[i].step)
   }
   return recipeSteps.join(' ');
-
 }
 
 function favoriteRecipe(id) {
@@ -86,17 +84,16 @@ function favoriteRecipe(id) {
   data = id.toString();
   console.log('recipeId = ', data)
   console.log('Favoriting recipe. ');
-  $.ajax({  
-    type: 'POST',  
-    url: './php-scripts/insertFavorite.php', 
-    data: {data : data},
-    success: function(response) {
+  $.ajax({
+    type: 'POST',
+    url: './php-scripts/insertFavorite.php',
+    data: { data: data },
+    success: function (response) {
       console.log(response);
       // window.location = "./php-scripts/insertFavorite.php";
     },
-    error: function() {
+    error: function () {
       console.log('Error calling php insert favorite script. ');
     }
-});
-  
+  });
 }

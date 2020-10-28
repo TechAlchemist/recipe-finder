@@ -27,10 +27,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous" />
+      <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./js/favorite-recipes.js"></script>
-
-    <link rel="stylesheet" href="./css/style.css" />
+    
 
   </head>
   <title>recipe finder | my recipes</title>
@@ -38,60 +38,51 @@
 
 <body>
   
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
-  <a class="navbar-brand" href="index.php">Recipe Finder</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="explore-recipes.php">Explore Recipes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="my-recipes.php"> My Recipes </a>
-      </li>
-    </ul>
-    <ul id="nav-login">
-      
-      <?php
-        if (!isset($_SESSION['username'])) {
-          echo ' 
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal"> Login </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> Sign Up? </a>
-          </li>';
-        }
-        else {
-          echo 
-          '<li class="nav-item">  
-            <a class="nav-link" href="my-recipes.php">' . $_SESSION['username'] . '</a>
-          </li>                    
-          <li class="nav-item">
-            <a class="nav-link" href="./php-scripts/logout.php"> Logout </a>
-          </li>'; 
-        }
-      ?>
-       
-    </ul>
-
-    
-  </div>
-</nav>
-
-
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: rgba(0,0,0,0.0) !important">
+    <a class="navbar-brand" href="index.php">Recipe Finder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="explore-recipes.php">Explore Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="my-recipes.php"> My Recipes </a>
+        </li>
+      </ul>
+      <ul id="nav-login">
+        <?php
+          if (!isset($_SESSION['username'])) {
+            echo ' 
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal"> Login </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Sign Up? </a>
+            </li>';
+          }
+          else {
+            echo 
+            '<li class="nav-item">  
+              <a class="nav-link" href="my-recipes.php">' . $_SESSION['username'] . '</a>
+            </li>                    
+            <li class="nav-item">
+              <a class="nav-link" href="./php-scripts/logout.php"> Logout </a>
+            </li>'; 
+          }
+        ?>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container" >
     <div class="jumbotron">
       <p> My Recipes </p>
-      <button class="btn btn-outline" type="button" id="displayFavorites">
-        Show Favorites
-      </button>
     </div>
   </div>
 
@@ -109,7 +100,7 @@
               appendRecipe(recipeResults);
             },
             (error) => {
-              console.log("bad request", error);
+              console.log('bad request ', error);
             }
           );
         }
@@ -155,9 +146,7 @@
           $recipes = getFavoriteRecipes(); 
           echo 'let obj;';
           for ($i = 0; $i < count($recipes); $i++) {
-            echo 'obj = apiRequestById(' . $recipes[$i]['recipe_id'] . ');';
-            // echo 'appendRecipe(obj);';
-            
+            echo 'obj = apiRequestById(' . $recipes[$i]['recipe_id'] . ');';          
           }
         ?>
       </script>

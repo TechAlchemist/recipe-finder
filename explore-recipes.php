@@ -1,10 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <head>
     <link rel="icon" type="image/png" href="favicon.png" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
@@ -24,9 +26,7 @@
       crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="js/explore-recipes.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
-
-  </head>
+    <link rel="stylesheet" href="./css/style.css"/>
   <title>rf | Explore</title>
 </head>
 
@@ -46,13 +46,30 @@
         <a class="nav-link" href="explore-recipes.php">Explore Recipes <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"> - </a>
+        <a class="nav-link" href="my-recipes.php"> My Recipes </a>
       </li>
     </ul>
     <ul id="nav-login">
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Login </a>
-      </li>
+      <?php
+        if (!isset($_SESSION['username'])) {
+          echo ' 
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal"> Login </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Sign Up? </a>
+          </li>';
+        }
+        else {
+          echo 
+          '<li class="nav-item">  
+            <a class="nav-link" href="my-recipes.php">' . $_SESSION['username'] . '</a>
+          </li>                    
+          <li class="nav-item">
+            <a class="nav-link" href="./php-scripts/logout.php"> Logout </a>
+          </li>'; 
+        }
+        ?>       
     </ul>
   </div>
 </nav>
