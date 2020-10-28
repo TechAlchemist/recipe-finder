@@ -14,7 +14,7 @@
 
 ### Database Schema
 
-![Database-user-schema](user-schema.png)
+![Database-user-schema](./screenshots/user-schema.png)
 
 ![Database-favorite-recipes-schema](./screenshots/favorite-recipes-schema.png)
 
