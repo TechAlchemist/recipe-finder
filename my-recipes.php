@@ -1,8 +1,8 @@
 <?php
   require './php-scripts/database.php';
   session_start();
-  
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +28,8 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./js/search-recipes.js"></script>
-    <script defer src="./js/auth.js"></script>
+    <script defer src="./js/favorite-recipes.js"></script>
+
     <link rel="stylesheet" href="./css/style.css" />
 
   </head>
@@ -89,10 +89,83 @@
   <div class="container" >
     <div class="jumbotron">
       <p> My Recipes </p>
+      <button class="btn btn-outline" type="button" id="displayFavorites">
+        Show Favorites
+      </button>
     </div>
   </div>
 
+  <div class="container">
+    <div class="card-deck">
+      <script>
+        function apiRequestById(id) {
+          $.ajax({
+            url: `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=a9e9d829481440938e0dd11ad5ac58a0`,
+          }).then(
+            (recipeData) => {
+              let recipeResults = recipeData;
+              // return recipeResults;
+              // console.log(recipeResults);
+              appendRecipe(recipeResults);
+            },
+            (error) => {
+              console.log("bad request", error);
+            }
+          );
+        }
+        function appendRecipe(obj) {
+          // console.log("TESTING OBJ IN append ", obj.id);
+        $('.card-deck').append(`
+            <div class="card">
+              <img class="card-img-top" src="${obj.image}" alt="Picture of food. " onError="this.onerror=null;this.src='favicon.png'";>
+              <div class="card-body">
+                <h5 class="card-title">${obj.title}</h5>
+                <p class="card-text"><small class="text-muted">Likes: ${obj.aggregateLikes}</small></p>
+                <div class="card-footer">     
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#${obj.id}">
+                        Show Recipe!
+                    </button>
+                </div>
+              </div>
+            </div>
+        
+            <div class="modal fade" id="${obj.id}" tabindex="-1" role="dialog" aria-labelledby="${obj.id}title" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="${obj.id}title">${obj.title}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body"> 
+                  </div>
+                  <div class="modal-footer">
+                      <i class="fas fa-heart" id="${obj.id}FAV" onclick="favoriteRecipe(${obj.id})"></i>
+                      <button type="button" class="btn btn-primary"><a href="${obj.sourceUrl}">Recipe Origin</a></button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            `
+            );
+        }
+        <?php 
+          $recipes = getFavoriteRecipes(); 
+          echo 'let obj;';
+          for ($i = 0; $i < count($recipes); $i++) {
+            echo 'obj = apiRequestById(' . $recipes[$i]['recipe_id'] . ');';
+            // echo 'appendRecipe(obj);';
+            
+          }
+        ?>
+      </script>
+    </div>
+  </div> 
+  <br>
 
 
   </body>
 </html>
+

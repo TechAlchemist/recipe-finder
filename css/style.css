@@ -128,9 +128,6 @@ a:hover {
   text-decoration: none;
   color: yellow;
 }
-p {
-  color: white;
-}
 @media screen and (max-width: 400px) {
   .sidebar a {
     text-align: center;

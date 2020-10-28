@@ -3,9 +3,6 @@ const $searchBtn = $('#search-submit');
 const $userInput = $('#recipe-search-bar');
 
 $($searchBtn).on('click', apiRequest);
-$(".fas fa-heart").on('click', function(){
-  console.log(this.id);
-});
 
 function apiRequest() {
   let userInput = $userInput.val();
@@ -67,9 +64,11 @@ function renderSearchResults(resultsArray) {
      </div>
     `
     );
+    $(`${element.id}FAV`).css('color', 'crimson');
   });
   $userInput.focus();
   $userInput.val('');
+  
 }
 
 function getRecipeInformation(instructions) {
