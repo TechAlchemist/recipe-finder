@@ -46,6 +46,7 @@ The project was developed in XAMPP, the development environment needs PDO module
     - Secure user login and account creation: password salting/hashing and auth tokens. THE WORKS!
 2. Move away from relational database for practice purposes. 
 3. Hide API keys and setup env files. 
+4. Check for duplicate records before insertion of favorite recipe. 
 
 ## Project Challeneges and Takeaway
 

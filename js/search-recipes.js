@@ -90,7 +90,6 @@ function favoriteRecipe(id) {
     data: { data: data },
     success: function (response) {
       console.log(response);
-      // window.location = "./php-scripts/insertFavorite.php";
     },
     error: function () {
       console.log('Error calling php insert favorite script. ');
