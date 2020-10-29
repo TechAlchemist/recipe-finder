@@ -6,6 +6,8 @@
 
 ## Screenshots
 
+![WireframeOfIndex](./screenshots/wireframe.png)
+
 ![HomeScreenShot](./screenshots/homepage.png)
 
 ![ExploreRecipeShot](./screenshots/explore-recipes.png)

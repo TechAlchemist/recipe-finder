@@ -8,7 +8,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $email = $_POST['username'];
     $pass = $_POST['password'];   
     if (authUser($email, $pass)) {
-        header('Location: http://localhost/recipeFinder/');
+        header('Location: https://brandons-recipe-finder.herokuapp.com/');
     }
     else {
         echo 'Auth Failure. ';

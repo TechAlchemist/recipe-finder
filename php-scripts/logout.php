@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: http://localhost/recipeFinder/");
+header("Location:https://brandons-recipe-finder.herokuapp.com/");
 ?>
