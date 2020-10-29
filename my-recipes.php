@@ -79,7 +79,7 @@
     <div class="jumbotron">
     <?php 
       if (!isset($_SESSION['username'])) {
-        echo '<p> To Save and View Recipes you to login or create an account. ';
+        echo '<p> To save and view recipes you need to login. </p>';
       }
       else {
         echo '<p>My Recipes</p>';
